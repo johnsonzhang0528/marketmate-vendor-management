@@ -1,0 +1,601 @@
+{
+  "folders": [
+    {
+      "name": "🏠 Main Project",
+      "path": "."
+    },
+    {
+      "name": "🖥️ Frontend (React)",
+      "path": "../worktrees/frontend"
+    },
+    {
+      "name": "⚙️ Backend (Node.js)",
+      "path": "../worktrees/backend"
+    },
+    {
+      "name": "📦 Inventory Module",
+      "path": "../worktrees/inventory"
+    },
+    {
+      "name": "💰 POS System",
+      "path": "../worktrees/pos"
+    },
+    {
+      "name": "👥 Customer Management",
+      "path": "../worktrees/customer"
+    },
+    {
+      "name": "📊 Analytics Module",
+      "path": "../worktrees/analytics"
+    },
+    {
+      "name": "📱 Mobile App",
+      "path": "../worktrees/mobile"
+    },
+    {
+      "name": "📚 Documentation",
+      "path": "../worktrees/docs"
+    },
+    {
+      "name": "🔗 Shared Types",
+      "path": "../worktrees/shared"
+    }
+  ],
+  "settings": {
+    "typescript.preferences.includePackageJsonAutoImports": "auto",
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "typescript.suggest.autoImports": true,
+
+    "editor.formatOnSave": true,
+    "editor.formatOnPaste": true,
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": "explicit",
+      "source.organizeImports": "explicit"
+    },
+    "editor.tabSize": 2,
+    "editor.insertSpaces": true,
+    "editor.detectIndentation": false,
+
+    "files.associations": {
+      "*.tsx": "typescriptreact",
+      "*.ts": "typescript",
+      "*.mdx": "markdown",
+      "*.prisma": "prisma"
+    },
+    "files.trimTrailingWhitespace": true,
+    "files.insertFinalNewline": true,
+    "files.eol": "\n",
+
+    "search.exclude": {
+      "**/node_modules": true,
+      "**/dist": true,
+      "**/build": true,
+      "**/.next": true,
+      "**/coverage": true,
+      "**/.turbo": true,
+      "**/package-lock.json": true,
+      "**/yarn.lock": true,
+      "**/pnpm-lock.yaml": true
+    },
+
+    "git.enableSmartCommit": true,
+    "git.confirmSync": false,
+    "git.openRepositoryInParentFolders": "always",
+    "git.defaultCloneDirectory": "../worktrees/",
+    "terminal.integrated.cwd": "${workspaceFolder}",
+    "terminal.integrated.defaultProfile.windows": "PowerShell",
+
+    "workbench.editor.enablePreview": false,
+    "workbench.editor.enablePreviewFromQuickOpen": false,
+    "workbench.startupEditor": "welcomePage",
+
+    "explorer.compactFolders": false,
+    "explorer.confirmDelete": false,
+    "explorer.confirmDragAndDrop": false,
+    "explorer.fileNesting.enabled": true,
+    "explorer.fileNesting.patterns": {
+      "*.ts": "${capture}.js",
+      "*.tsx": "${capture}.js, ${capture}.css, ${capture}.module.css",
+      "package.json": "package-lock.json, yarn.lock, pnpm-lock.yaml",
+      "tsconfig.json": "tsconfig.*.json",
+      "vite.config.*": "vite.config.*.ts"
+    },
+
+    "workbench.colorCustomizations": {
+      "titleBar.activeBackground": "#2563eb",
+      "titleBar.activeForeground": "#ffffff",
+      "titleBar.inactiveBackground": "#1e40af",
+      "titleBar.inactiveForeground": "#e5e7eb",
+      "statusBar.background": "#2563eb",
+      "statusBar.foreground": "#ffffff",
+      "statusBar.noFolderBackground": "#1e40af",
+      "panel.border": "#2563eb",
+      "sideBar.border": "#e5e7eb",
+      "editorGroup.border": "#e5e7eb",
+      "tab.activeBorder": "#2563eb",
+      "tab.activeModifiedBorder": "#f59e0b",
+      "tab.unfocusedActiveModifiedBorder": "#f59e0b"
+    },
+
+    "eslint.enable": true,
+    "eslint.workingDirectories": [
+      "./",
+      "../worktrees/frontend",
+      "../worktrees/backend",
+      "../worktrees/inventory",
+      "../worktrees/pos",
+      "../worktrees/customer",
+      "../worktrees/analytics",
+      "../worktrees/mobile",
+      "../worktrees/docs",
+      "../worktrees/shared"
+    ],
+    "eslint.validate": [
+      "javascript",
+      "javascriptreact",
+      "typescript",
+      "typescriptreact"
+    ],
+
+    "prettier.requireConfig": true,
+    "prettier.configPath": ".prettierrc",
+    "prettier.enable": true,
+
+    "tailwindCSS.includeLanguages": {
+      "typescript": "typescript",
+      "typescriptreact": "typescriptreact"
+    },
+    "tailwindCSS.experimental.classRegex": [
+      "tw`([^`]*)",
+      ["clsx\\\\(([^)]*)\\\\)", "'([^']*)'"],
+      ["classnames\\\\(([^)]*)\\\\)", "'([^']*)'"],
+      ["cn\\\\(([^)]*)\\\\)", "'([^']*)'"]
+    ],
+
+    "emmet.includeLanguages": {
+      "javascript": "javascriptreact",
+      "typescript": "typescriptreact"
+    },
+    "emmet.triggerExpansionOnTab": true,
+
+    "[typescript]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode",
+      "editor.rulers": [80, 120],
+      "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": "explicit",
+        "source.organizeImports": "explicit"
+      }
+    },
+    "[typescriptreact]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode",
+      "editor.rulers": [80, 120],
+      "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": "explicit",
+        "source.organizeImports": "explicit"
+      }
+    },
+    "[javascript]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[json]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[markdown]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode",
+      "editor.wordWrap": "on"
+    },
+    "[prisma]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+
+    "github.copilot.enable": {
+      "*": true,
+      "typescript": true,
+      "typescriptreact": true,
+      "javascript": true,
+      "javascriptreact": true,
+      "markdown": true,
+      "plaintext": false
+    },
+    "github.copilot.chat.localeOverride": "zh-TW",
+
+    "npm.packageManager": "pnpm",
+    "npm.autoDetect": "on",
+
+    "marketmate.development": {
+      "autoStartDevServers": false,
+      "enableHotReload": true,
+      "showPerformanceMetrics": true,
+      "enableTypeChecking": true
+    }
+  },
+  "extensions": {
+    "recommendations": [
+      "ms-vscode.vscode-typescript-next",
+      "bradlc.vscode-tailwindcss",
+      "esbenp.prettier-vscode",
+      "dbaeumer.vscode-eslint",
+      "ms-vscode.vscode-json",
+      "formulahendry.auto-rename-tag",
+      "christian-kohler.path-intellisense",
+      "mhutchie.git-graph",
+      "eamodio.gitlens",
+      "alefragnani.project-manager",
+      "streetsidesoftware.code-spell-checker",
+      "gruntfuggly.todo-tree",
+      "PKief.material-icon-theme",
+      "zhuangtongfa.Material-theme",
+      "GitHub.copilot",
+      "GitHub.copilot-chat",
+      "Prisma.prisma",
+      "vitest.explorer",
+      "ms-playwright.playwright",
+      "rangav.vscode-thunder-client",
+      "GitWorktrees.git-worktrees",
+      "usernamehw.errorlens",
+      "ms-vscode.live-server",
+      "ritwickdey.LiveServer"
+    ]
+  },
+  "tasks": {
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "label": "🚀 Start Full Development Environment",
+        "dependsOrder": "parallel",
+        "dependsOn": [
+          "🖥️ Dev: Frontend Server",
+          "⚙️ Dev: Backend Server",
+          "🗄️ Database: Studio"
+        ],
+        "group": "build",
+        "presentation": {
+          "group": "development",
+          "reveal": "always"
+        },
+        "detail": "同時啟動前端、後端和資料庫管理介面"
+      },
+      {
+        "label": "🧪 Run Complete Test Suite",
+        "dependsOrder": "sequence",
+        "dependsOn": [
+          "🧪 Test: Frontend",
+          "🧪 Test: Backend",
+          "🔍 Lint: All Projects"
+        ],
+        "group": "test",
+        "presentation": {
+          "group": "testing",
+          "reveal": "always"
+        },
+        "detail": "執行完整的測試和代碼檢查"
+      },
+      {
+        "label": "🏗️ Build Production Ready",
+        "dependsOrder": "sequence",
+        "dependsOn": [
+          "🧹 Clean: All Build Files",
+          "📦 Install: All Dependencies",
+          "🧪 Test: All Projects",
+          "🏗️ Build: All Projects"
+        ],
+        "group": "build",
+        "presentation": {
+          "group": "production",
+          "reveal": "always"
+        },
+        "detail": "準備生產環境的完整建置流程"
+      },
+      {
+        "label": "🔧 Setup Development Environment",
+        "dependsOrder": "sequence",
+        "dependsOn": [
+          "🚀 Setup: Initialize All Worktrees",
+          "📦 Install: All Dependencies",
+          "🗄️ Database: Migrate",
+          "🗄️ Database: Seed"
+        ],
+        "group": "build",
+        "presentation": {
+          "group": "setup",
+          "reveal": "always"
+        },
+        "detail": "初始化完整的開發環境"
+      },
+      {
+        "label": "📦 Start All Modules",
+        "dependsOrder": "parallel",
+        "dependsOn": [
+          "📦 Dev: Inventory Module",
+          "💰 Dev: POS Module",
+          "👥 Dev: Customer Module",
+          "📊 Dev: Analytics Module"
+        ],
+        "group": "build",
+        "presentation": {
+          "group": "modules",
+          "reveal": "always"
+        },
+        "detail": "啟動所有功能模組的開發伺服器"
+      },
+      {
+        "label": "🎨 Start Design System",
+        "dependsOrder": "parallel",
+        "dependsOn": [
+          "📋 Dev: Storybook",
+          "🖥️ Dev: Frontend Server"
+        ],
+        "group": "build",
+        "presentation": {
+          "group": "design",
+          "reveal": "always"
+        },
+        "detail": "啟動設計系統相關的開發工具"
+      },
+      {
+        "label": "🖥️ Dev: Frontend Server",
+        "type": "shell",
+        "command": "npm",
+        "args": ["run", "dev"],
+        "options": {
+          "cwd": "../worktrees/frontend"
+        },
+        "group": "build",
+        "presentation": {
+          "echo": true,
+          "reveal": "always",
+          "panel": "dedicated",
+          "group": "development"
+        },
+        "isBackground": true,
+        "detail": "啟動前端開發伺服器"
+      },
+      {
+        "label": "⚙️ Dev: Backend Server",
+        "type": "shell",
+        "command": "npm",
+        "args": ["run", "dev"],
+        "options": {
+          "cwd": "../worktrees/backend"
+        },
+        "group": "build",
+        "presentation": {
+          "echo": true,
+          "reveal": "always",
+          "panel": "dedicated",
+          "group": "development"
+        },
+        "isBackground": true,
+        "detail": "啟動後端開發伺服器"
+      },
+      {
+        "label": "🚀 Setup: Initialize All Worktrees",
+        "type": "shell",
+        "command": "pwsh",
+        "args": ["-File", "./scripts/init-worktrees.ps1"],
+        "group": "build",
+        "presentation": {
+          "echo": true,
+          "reveal": "always",
+          "focus": true,
+          "panel": "shared"
+        },
+        "detail": "初始化所有 Git Worktree"
+      },
+      {
+        "label": "📦 Install: All Dependencies",
+        "type": "shell",
+        "command": "pwsh",
+        "args": ["-File", "./scripts/install-all-deps.ps1"],
+        "group": "build",
+        "presentation": {
+          "echo": true,
+          "reveal": "always",
+          "focus": true,
+          "panel": "shared"
+        },
+        "detail": "安裝所有模組的依賴套件"
+      },
+      {
+        "label": "🏗️ Build: All Projects",
+        "type": "shell",
+        "command": "pwsh",
+        "args": ["-File", "./scripts/build-all.ps1"],
+        "group": "build",
+        "presentation": {
+          "echo": true,
+          "reveal": "always",
+          "focus": true,
+          "panel": "shared"
+        },
+        "detail": "建置所有專案"
+      },
+      {
+        "label": "🧪 Test: All Projects",
+        "type": "shell",
+        "command": "pwsh",
+        "args": ["-File", "./scripts/test-all.ps1"],
+        "group": "test",
+        "presentation": {
+          "echo": true,
+          "reveal": "always",
+          "focus": true,
+          "panel": "shared"
+        },
+        "detail": "執行所有測試"
+      },
+      {
+        "label": "🧪 Test: Frontend",
+        "type": "shell",
+        "command": "npm",
+        "args": ["test"],
+        "options": {
+          "cwd": "../worktrees/frontend"
+        },
+        "group": "test",
+        "presentation": {
+          "echo": true,
+          "reveal": "always",
+          "panel": "shared"
+        },
+        "detail": "執行前端測試"
+      },
+      {
+        "label": "🧪 Test: Backend",
+        "type": "shell",
+        "command": "npm",
+        "args": ["test"],
+        "options": {
+          "cwd": "../worktrees/backend"
+        },
+        "group": "test",
+        "presentation": {
+          "echo": true,
+          "reveal": "always",
+          "panel": "shared"
+        },
+        "detail": "執行後端測試"
+      },
+      {
+        "label": "🔍 Lint: All Projects",
+        "type": "shell",
+        "command": "pwsh",
+        "args": ["-File", "./scripts/lint-all.ps1"],
+        "group": "test",
+        "presentation": {
+          "echo": true,
+          "reveal": "always",
+          "panel": "shared"
+        },
+        "detail": "檢查所有專案的代碼品質"
+      },
+      {
+        "label": "🗄️ Database: Studio",
+        "type": "shell",
+        "command": "npx",
+        "args": ["prisma", "studio"],
+        "options": {
+          "cwd": "../worktrees/backend"
+        },
+        "group": "build",
+        "presentation": {
+          "echo": true,
+          "reveal": "always",
+          "panel": "dedicated"
+        },
+        "isBackground": true,
+        "detail": "開啟 Prisma Studio"
+      },
+      {
+        "label": "🗄️ Database: Migrate",
+        "type": "shell",
+        "command": "npx",
+        "args": ["prisma", "migrate", "dev"],
+        "options": {
+          "cwd": "../worktrees/backend"
+        },
+        "group": "build",
+        "presentation": {
+          "echo": true,
+          "reveal": "always",
+          "panel": "shared"
+        },
+        "detail": "執行資料庫遷移"
+      },
+      {
+        "label": "🗄️ Database: Seed",
+        "type": "shell",
+        "command": "npm",
+        "args": ["run", "db:seed"],
+        "options": {
+          "cwd": "../worktrees/backend"
+        },
+        "group": "build",
+        "presentation": {
+          "echo": true,
+          "reveal": "always",
+          "panel": "shared"
+        },
+        "detail": "填充測試資料"
+      },
+      {
+        "label": "📋 Dev: Storybook",
+        "type": "shell",
+        "command": "npm",
+        "args": ["run", "storybook"],
+        "options": {
+          "cwd": "../worktrees/frontend"
+        },
+        "group": "build",
+        "presentation": {
+          "echo": true,
+          "reveal": "always",
+          "panel": "dedicated"
+        },
+        "isBackground": true,
+        "detail": "啟動 Storybook"
+      },
+      {
+        "label": "🧹 Clean: All Build Files",
+        "type": "shell",
+        "command": "pwsh",
+        "args": ["-File", "./scripts/clean-all.ps1"],
+        "group": "build",
+        "presentation": {
+          "echo": true,
+          "reveal": "always",
+          "panel": "shared"
+        },
+        "detail": "清理所有建置檔案"
+      },
+      {
+        "label": "📦 Dev: Inventory Module",
+        "type": "shell",
+        "command": "npm",
+        "args": ["run", "dev"],
+        "options": {
+          "cwd": "../worktrees/inventory"
+        },
+        "group": "build",
+        "isBackground": true,
+        "detail": "啟動庫存管理模組"
+      },
+      {
+        "label": "💰 Dev: POS Module",
+        "type": "shell",
+        "command": "npm",
+        "args": ["run", "dev"],
+        "options": {
+          "cwd": "../worktrees/pos"
+        },
+        "group": "build",
+        "isBackground": true,
+        "detail": "啟動 POS 系統模組"
+      },
+      {
+        "label": "👥 Dev: Customer Module",
+        "type": "shell",
+        "command": "npm",
+        "args": ["run", "dev"],
+        "options": {
+          "cwd": "../worktrees/customer"
+        },
+        "group": "build",
+        "isBackground": true,
+        "detail": "啟動客戶管理模組"
+      },
+      {
+        "label": "📊 Dev: Analytics Module",
+        "type": "shell",
+        "command": "npm",
+        "args": ["run", "dev"],
+        "options": {
+          "cwd": "../worktrees/analytics"
+        },
+        "group": "build",
+        "isBackground": true,
+        "detail": "啟動財務分析模組"
+      }
+    ]
+  }
+}

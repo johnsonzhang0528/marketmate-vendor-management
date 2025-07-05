@@ -1,0 +1,61 @@
+{
+  "recommendations": [
+    // GitHub Copilot 套件
+    "GitHub.copilot",
+    "GitHub.copilot-chat",
+
+    // TypeScript 開發
+    "ms-vscode.vscode-typescript-next",
+
+    // 代碼格式化和品質
+    "esbenp.prettier-vscode",
+    "dbaeumer.vscode-eslint",
+    "usernamehw.errorlens",
+
+    // 前端開發
+    "bradlc.vscode-tailwindcss",
+    "formulahendry.auto-rename-tag",
+    "ms-vscode.vscode-json",
+
+    // 資料庫
+    "Prisma.prisma",
+
+    // 測試
+    "vitest.explorer",
+    "ms-playwright.playwright",
+
+    // Git 工具
+    "mhutchie.git-graph",
+    "eamodio.gitlens",
+    "GitWorktrees.git-worktrees",
+
+    // 開發工具
+    "christian-kohler.path-intellisense",
+    "alefragnani.project-manager",
+    "ms-vscode.live-server",
+    "ritwickdey.LiveServer",
+    "rangav.vscode-thunder-client",
+
+    // 代碼品質
+    "streetsidesoftware.code-spell-checker",
+    "gruntfuggly.todo-tree",
+    "shardulm94.trailing-spaces",
+
+    // 外觀和體驗
+    "PKief.material-icon-theme",
+    "zhuangtongfa.Material-theme",
+    "oderwat.indent-rainbow",
+    "vincaslt.highlight-matching-tag",
+
+    // 其他工具
+    "intellsmi.comment-translate",
+    "pmneo.tsimporter"
+  ],
+
+  "unwantedRecommendations": [
+    // 避免安裝可能衝突的擴展
+    "ms-vscode.vscode-eslint-language-server",
+    "ms-vscode.typescript-javascript-grammar",
+    "bradlc.vscode-tailwindcss-old"
+  ]
+}

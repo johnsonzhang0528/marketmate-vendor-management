@@ -1,0 +1,300 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "🖥️ Debug Frontend (Vite)",
+      "type": "node",
+      "request": "launch",
+      "cwd": "${workspaceFolder}/../worktrees/frontend",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "dev"],
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen",
+      "presentation": {
+        "group": "frontend",
+        "order": 1
+      },
+      "env": {
+        "NODE_ENV": "development"
+      }
+    },
+    {
+      "name": "⚙️ Debug Backend (Node.js)",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/../worktrees/backend/src/index.ts",
+      "cwd": "${workspaceFolder}/../worktrees/backend",
+      "outFiles": ["${workspaceFolder}/../worktrees/backend/dist/**/*.js"],
+      "runtimeArgs": ["--nolazy", "-r", "ts-node/register"],
+      "env": {
+        "NODE_ENV": "development",
+        "DEBUG": "marketmate:*"
+      },
+      "console": "integratedTerminal",
+      "presentation": {
+        "group": "backend",
+        "order": 1
+      },
+      "skipFiles": ["<node_internals>/**"]
+    },
+    {
+      "name": "📦 Debug Inventory Module",
+      "type": "node",
+      "request": "launch",
+      "cwd": "${workspaceFolder}/../worktrees/inventory",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "dev"],
+      "console": "integratedTerminal",
+      "presentation": {
+        "group": "modules",
+        "order": 1
+      },
+      "env": {
+        "NODE_ENV": "development"
+      }
+    },
+    {
+      "name": "💰 Debug POS Module",
+      "type": "node",
+      "request": "launch",
+      "cwd": "${workspaceFolder}/../worktrees/pos",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "dev"],
+      "console": "integratedTerminal",
+      "presentation": {
+        "group": "modules",
+        "order": 2
+      },
+      "env": {
+        "NODE_ENV": "development"
+      }
+    },
+    {
+      "name": "👥 Debug Customer Module",
+      "type": "node",
+      "request": "launch",
+      "cwd": "${workspaceFolder}/../worktrees/customer",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "dev"],
+      "console": "integratedTerminal",
+      "presentation": {
+        "group": "modules",
+        "order": 3
+      },
+      "env": {
+        "NODE_ENV": "development"
+      }
+    },
+    {
+      "name": "📊 Debug Analytics Module",
+      "type": "node",
+      "request": "launch",
+      "cwd": "${workspaceFolder}/../worktrees/analytics",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "dev"],
+      "console": "integratedTerminal",
+      "presentation": {
+        "group": "modules",
+        "order": 4
+      },
+      "env": {
+        "NODE_ENV": "development"
+      }
+    },
+    {
+      "name": "📱 Debug Mobile App",
+      "type": "node",
+      "request": "launch",
+      "cwd": "${workspaceFolder}/../worktrees/mobile",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["start"],
+      "console": "integratedTerminal",
+      "presentation": {
+        "group": "mobile",
+        "order": 1
+      },
+      "env": {
+        "NODE_ENV": "development"
+      }
+    },
+    {
+      "name": "📚 Debug Documentation",
+      "type": "node",
+      "request": "launch",
+      "cwd": "${workspaceFolder}/../worktrees/docs",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "dev"],
+      "console": "integratedTerminal",
+      "presentation": {
+        "group": "docs",
+        "order": 1
+      },
+      "env": {
+        "NODE_ENV": "development"
+      }
+    },
+    {
+      "name": "🧪 Debug Tests (Vitest)",
+      "type": "node",
+      "request": "launch",
+      "cwd": "${workspaceFolder}/../worktrees/frontend",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "test:debug"],
+      "console": "integratedTerminal",
+      "presentation": {
+        "group": "testing",
+        "order": 1
+      },
+      "env": {
+        "NODE_ENV": "test"
+      }
+    },
+    {
+      "name": "🔍 Debug Frontend Tests",
+      "type": "node",
+      "request": "launch",
+      "cwd": "${workspaceFolder}/../worktrees/frontend",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["test"],
+      "console": "integratedTerminal",
+      "presentation": {
+        "group": "testing",
+        "order": 2
+      },
+      "env": {
+        "NODE_ENV": "test"
+      }
+    },
+    {
+      "name": "🔍 Debug Backend Tests",
+      "type": "node",
+      "request": "launch",
+      "cwd": "${workspaceFolder}/../worktrees/backend",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["test"],
+      "console": "integratedTerminal",
+      "presentation": {
+        "group": "testing",
+        "order": 3
+      },
+      "env": {
+        "NODE_ENV": "test"
+      }
+    },
+    {
+      "name": "🗄️ Debug Database (Prisma Studio)",
+      "type": "node",
+      "request": "launch",
+      "cwd": "${workspaceFolder}/../worktrees/backend",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["prisma", "studio"],
+      "console": "integratedTerminal",
+      "presentation": {
+        "group": "database",
+        "order": 1
+      },
+      "env": {
+        "NODE_ENV": "development"
+      }
+    },
+    {
+      "name": "📋 Debug Storybook",
+      "type": "node",
+      "request": "launch",
+      "cwd": "${workspaceFolder}/../worktrees/frontend",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "storybook"],
+      "console": "integratedTerminal",
+      "presentation": {
+        "group": "storybook",
+        "order": 1
+      },
+      "env": {
+        "NODE_ENV": "development"
+      }
+    },
+    {
+      "name": "🎭 Debug Playwright Tests",
+      "type": "node",
+      "request": "launch",
+      "cwd": "${workspaceFolder}/../worktrees/frontend",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["playwright", "test", "--debug"],
+      "console": "integratedTerminal",
+      "presentation": {
+        "group": "e2e",
+        "order": 1
+      },
+      "env": {
+        "NODE_ENV": "test"
+      }
+    }
+  ],
+  "compounds": [
+    {
+      "name": "🚀 Full Stack Development",
+      "configurations": [
+        "🖥️ Debug Frontend (Vite)",
+        "⚙️ Debug Backend (Node.js)"
+      ],
+      "presentation": {
+        "group": "compound",
+        "order": 1
+      },
+      "stopAll": true
+    },
+    {
+      "name": "📦 All Modules Development",
+      "configurations": [
+        "📦 Debug Inventory Module",
+        "💰 Debug POS Module",
+        "👥 Debug Customer Module",
+        "📊 Debug Analytics Module"
+      ],
+      "presentation": {
+        "group": "compound",
+        "order": 2
+      },
+      "stopAll": true
+    },
+    {
+      "name": "🧪 Complete Testing Suite",
+      "configurations": [
+        "🔍 Debug Frontend Tests",
+        "🔍 Debug Backend Tests",
+        "🎭 Debug Playwright Tests"
+      ],
+      "presentation": {
+        "group": "compound",
+        "order": 3
+      },
+      "stopAll": true
+    },
+    {
+      "name": "🛠️ Development Tools",
+      "configurations": [
+        "🗄️ Debug Database (Prisma Studio)",
+        "📋 Debug Storybook"
+      ],
+      "presentation": {
+        "group": "compound",
+        "order": 4
+      },
+      "stopAll": true
+    },
+    {
+      "name": "🌐 Complete Environment",
+      "configurations": [
+        "🖥️ Debug Frontend (Vite)",
+        "⚙️ Debug Backend (Node.js)",
+        "🗄️ Debug Database (Prisma Studio)",
+        "📋 Debug Storybook"
+      ],
+      "presentation": {
+        "group": "compound",
+        "order": 5
+      },
+      "stopAll": true
+    }
+  ]
+}

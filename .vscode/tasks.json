@@ -1,0 +1,856 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "🚀 Setup: Initialize All Worktrees",
+      "type": "shell",
+      "command": "pwsh",
+      "args": ["-File", "./scripts/init-worktrees.ps1"],
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": true,
+        "panel": "shared",
+        "group": "setup"
+      },
+      "problemMatcher": [],
+      "detail": "初始化所有 Git Worktree 和專案模組"
+    },
+    {
+      "label": "🔄 Sync: Update All Worktrees",
+      "type": "shell",
+      "command": "pwsh",
+      "args": ["-File", "./scripts/sync-all-worktrees.ps1", "-Pull"],
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "panel": "shared",
+        "group": "sync"
+      },
+      "detail": "同步所有 Worktree 的最新代碼"
+    },
+    {
+      "label": "📦 Install: All Dependencies",
+      "type": "shell",
+      "command": "pwsh",
+      "args": ["-File", "./scripts/install-all-deps.ps1"],
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "panel": "shared",
+        "group": "install"
+      },
+      "detail": "安裝所有模組的依賴套件"
+    },
+    {
+      "label": "🖥️ Dev: Frontend Server",
+      "type": "shell",
+      "command": "npm",
+      "args": ["run", "dev"],
+      "options": {
+        "cwd": "../worktrees/frontend"
+      },
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "panel": "dedicated",
+        "group": "development"
+      },
+      "isBackground": true,
+      "problemMatcher": [
+        {
+          "pattern": [
+            {
+              "regexp": ".",
+              "file": 1,
+              "location": 2,
+              "message": 3
+            }
+          ],
+          "background": {
+            "activeOnStart": true,
+            "beginsPattern": ".",
+            "endsPattern": "."
+          }
+        }
+      ],
+      "detail": "啟動前端開發伺服器"
+    },
+    {
+      "label": "⚙️ Dev: Backend Server",
+      "type": "shell",
+      "command": "npm",
+      "args": ["run", "dev"],
+      "options": {
+        "cwd": "../worktrees/backend"
+      },
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "panel": "dedicated",
+        "group": "development"
+      },
+      "isBackground": true,
+      "problemMatcher": [
+        {
+          "pattern": [
+            {
+              "regexp": ".",
+              "file": 1,
+              "location": 2,
+              "message": 3
+            }
+          ],
+          "background": {
+            "activeOnStart": true,
+            "beginsPattern": ".",
+            "endsPattern": "."
+          }
+        }
+      ],
+      "detail": "啟動後端開發伺服器"
+    },
+    {
+      "label": "📦 Dev: Inventory Module",
+      "type": "shell",
+      "command": "npm",
+      "args": ["run", "dev"],
+      "options": {
+        "cwd": "../worktrees/inventory"
+      },
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "panel": "dedicated",
+        "group": "modules"
+      },
+      "isBackground": true,
+      "detail": "啟動庫存管理模組開發"
+    },
+    {
+      "label": "💰 Dev: POS Module",
+      "type": "shell",
+      "command": "npm",
+      "args": ["run", "dev"],
+      "options": {
+        "cwd": "../worktrees/pos"
+      },
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "panel": "dedicated",
+        "group": "modules"
+      },
+      "isBackground": true,
+      "detail": "啟動 POS 系統模組開發"
+    },
+    {
+      "label": "👥 Dev: Customer Module",
+      "type": "shell",
+      "command": "npm",
+      "args": ["run", "dev"],
+      "options": {
+        "cwd": "../worktrees/customer"
+      },
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "panel": "dedicated",
+        "group": "modules"
+      },
+      "isBackground": true,
+      "detail": "啟動客戶管理模組開發"
+    },
+    {
+      "label": "📊 Dev: Analytics Module",
+      "type": "shell",
+      "command": "npm",
+      "args": ["run", "dev"],
+      "options": {
+        "cwd": "../worktrees/analytics"
+      },
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "panel": "dedicated",
+        "group": "modules"
+      },
+      "isBackground": true,
+      "detail": "啟動財務分析模組開發"
+    },
+    {
+      "label": "📱 Dev: Mobile App",
+      "type": "shell",
+      "command": "npm",
+      "args": ["start"],
+      "options": {
+        "cwd": "../worktrees/mobile"
+      },
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "panel": "dedicated",
+        "group": "mobile"
+      },
+      "isBackground": true,
+      "detail": "啟動行動應用開發"
+    },
+    {
+      "label": "📚 Dev: Documentation",
+      "type": "shell",
+      "command": "npm",
+      "args": ["run", "dev"],
+      "options": {
+        "cwd": "../worktrees/docs"
+      },
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "panel": "dedicated",
+        "group": "docs"
+      },
+      "isBackground": true,
+      "detail": "啟動文件網站開發"
+    },
+    {
+      "label": "🏗️ Build: All Projects",
+      "type": "shell",
+      "command": "pwsh",
+      "args": ["-File", "./scripts/build-all.ps1"],
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": true,
+        "panel": "shared",
+        "group": "build"
+      },
+      "detail": "建置所有專案模組"
+    },
+    {
+      "label": "🏗️ Build: Frontend",
+      "type": "shell",
+      "command": "npm",
+      "args": ["run", "build"],
+      "options": {
+        "cwd": "../worktrees/frontend"
+      },
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "panel": "shared",
+        "group": "build"
+      },
+      "problemMatcher": ["$tsc"],
+      "detail": "建置前端專案"
+    },
+    {
+      "label": "🏗️ Build: Backend",
+      "type": "shell",
+      "command": "npm",
+      "args": ["run", "build"],
+      "options": {
+        "cwd": "../worktrees/backend"
+      },
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "panel": "shared",
+        "group": "build"
+      },
+      "problemMatcher": ["$tsc"],
+      "detail": "建置後端專案"
+    },
+    {
+      "label": "🧪 Test: All Projects",
+      "type": "shell",
+      "command": "pwsh",
+      "args": ["-File", "./scripts/test-all.ps1"],
+      "group": "test",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": true,
+        "panel": "shared",
+        "group": "testing"
+      },
+      "detail": "執行所有專案的測試套件"
+    },
+    {
+      "label": "🧪 Test: Frontend",
+      "type": "shell",
+      "command": "npm",
+      "args": ["test"],
+      "options": {
+        "cwd": "../worktrees/frontend"
+      },
+      "group": "test",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "panel": "shared",
+        "group": "testing"
+      },
+      "detail": "執行前端測試"
+    },
+    {
+      "label": "🧪 Test: Backend",
+      "type": "shell",
+      "command": "npm",
+      "args": ["test"],
+      "options": {
+        "cwd": "../worktrees/backend"
+      },
+      "group": "test",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "panel": "shared",
+        "group": "testing"
+      },
+      "detail": "執行後端測試"
+    },
+    {
+      "label": "🧪 Test: Watch Mode",
+      "type": "shell",
+      "command": "npm",
+      "args": ["run", "test:watch"],
+      "options": {
+        "cwd": "../worktrees/frontend"
+      },
+      "group": "test",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "panel": "dedicated",
+        "group": "testing"
+      },
+      "isBackground": true,
+      "detail": "以監視模式執行前端測試"
+    },
+    {
+      "label": "🎭 Test: E2E Tests",
+      "type": "shell",
+      "command": "npx",
+      "args": ["playwright", "test"],
+      "options": {
+        "cwd": "../worktrees/frontend"
+      },
+      "group": "test",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "panel": "shared",
+        "group": "testing"
+      },
+      "detail": "執行端到端測試"
+    },
+    {
+      "label": "🧪 Test: Coverage Report",
+      "type": "shell",
+      "command": "npm",
+      "args": ["run", "test:coverage"],
+      "options": {
+        "cwd": "../worktrees/frontend"
+      },
+      "group": "test",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "panel": "shared",
+        "group": "testing"
+      },
+      "detail": "生成測試覆蓋率報告"
+    },
+    {
+      "label": "🔍 Lint: All Projects",
+      "type": "shell",
+      "command": "pwsh",
+      "args": ["-File", "./scripts/lint-all.ps1"],
+      "group": "test",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "panel": "shared",
+        "group": "quality"
+      },
+      "detail": "檢查所有專案的代碼品質"
+    },
+    {
+      "label": "🔍 Lint: Fix All",
+      "type": "shell",
+      "command": "pwsh",
+      "args": ["-File", "./scripts/lint-fix-all.ps1"],
+      "group": "test",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "panel": "shared",
+        "group": "quality"
+      },
+      "detail": "自動修復所有可修復的代碼品質問題"
+    },
+    {
+      "label": "💎 Format: All Code",
+      "type": "shell",
+      "command": "pwsh",
+      "args": ["-File", "./scripts/format-all.ps1"],
+      "group": "test",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "panel": "shared",
+        "group": "quality"
+      },
+      "detail": "格式化所有專案的代碼"
+    },
+    {
+      "label": "🗄️ Database: Migrate",
+      "type": "shell",
+      "command": "npx",
+      "args": ["prisma", "migrate", "dev"],
+      "options": {
+        "cwd": "../worktrees/backend"
+      },
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "panel": "shared",
+        "group": "database"
+      },
+      "detail": "執行資料庫遷移"
+    },
+    {
+      "label": "🗄️ Database: Reset",
+      "type": "shell",
+      "command": "npx",
+      "args": ["prisma", "migrate", "reset"],
+      "options": {
+        "cwd": "../worktrees/backend"
+      },
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "panel": "shared",
+        "group": "database"
+      },
+      "detail": "重置資料庫"
+    },
+    {
+      "label": "🗄️ Database: Seed",
+      "type": "shell",
+      "command": "npm",
+      "args": ["run", "db:seed"],
+      "options": {
+        "cwd": "../worktrees/backend"
+      },
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "panel": "shared",
+        "group": "database"
+      },
+      "detail": "填充測試資料"
+    },
+    {
+      "label": "🗄️ Database: Studio",
+      "type": "shell",
+      "command": "npx",
+      "args": ["prisma", "studio"],
+      "options": {
+        "cwd": "../worktrees/backend"
+      },
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "panel": "dedicated",
+        "group": "database"
+      },
+      "isBackground": true,
+      "detail": "開啟 Prisma Studio 資料庫管理介面"
+    },
+    {
+      "label": "📋 Dev: Storybook",
+      "type": "shell",
+      "command": "npm",
+      "args": ["run", "storybook"],
+      "options": {
+        "cwd": "../worktrees/frontend"
+      },
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "panel": "dedicated",
+        "group": "storybook"
+      },
+      "isBackground": true,
+      "detail": "啟動 Storybook 組件文檔"
+    },
+    {
+      "label": "📋 Build: Storybook",
+      "type": "shell",
+      "command": "npm",
+      "args": ["run", "build-storybook"],
+      "options": {
+        "cwd": "../worktrees/frontend"
+      },
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "panel": "shared",
+        "group": "storybook"
+      },
+      "detail": "建置 Storybook 靜態文件"
+    },
+    {
+      "label": "🚀 Deploy: Staging",
+      "type": "shell",
+      "command": "pwsh",
+      "args": ["-File", "./scripts/deploy-staging.ps1"],
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": true,
+        "panel": "shared",
+        "group": "deployment"
+      },
+      "detail": "部署到測試環境"
+    },
+    {
+      "label": "🚀 Deploy: Production",
+      "type": "shell",
+      "command": "pwsh",
+      "args": ["-File", "./scripts/deploy-production.ps1"],
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": true,
+        "panel": "shared",
+        "group": "deployment"
+      },
+      "detail": "部署到生產環境"
+    },
+    {
+      "label": "🔧 Tools: Generate API Types",
+      "type": "shell",
+      "command": "npm",
+      "args": ["run", "generate:types"],
+      "options": {
+        "cwd": "../worktrees/backend"
+      },
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "panel": "shared",
+        "group": "tools"
+      },
+      "detail": "生成 API TypeScript 類型定義"
+    },
+    {
+      "label": "🔧 Tools: Update Dependencies",
+      "type": "shell",
+      "command": "pwsh",
+      "args": ["-File", "./scripts/update-deps.ps1"],
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "panel": "shared",
+        "group": "tools"
+      },
+      "detail": "更新所有專案的依賴套件"
+    },
+    {
+      "label": "📊 Analysis: Bundle Size",
+      "type": "shell",
+      "command": "npm",
+      "args": ["run", "analyze"],
+      "options": {
+        "cwd": "../worktrees/frontend"
+      },
+      "group": "test",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "panel": "shared",
+        "group": "analysis"
+      },
+      "detail": "分析前端 Bundle 大小"
+    },
+    {
+      "label": "📊 Analysis: Performance",
+      "type": "shell",
+      "command": "pwsh",
+      "args": ["-File", "./scripts/performance-test.ps1"],
+      "group": "test",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "panel": "shared",
+        "group": "analysis"
+      },
+      "detail": "執行效能測試"
+    },
+    {
+      "label": "🧹 Clean: All Build Files",
+      "type": "shell",
+      "command": "pwsh",
+      "args": ["-File", "./scripts/clean-all.ps1"],
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "panel": "shared",
+        "group": "cleanup"
+      },
+      "detail": "清理所有建置檔案"
+    },
+    {
+      "label": "🧹 Clean: Node Modules",
+      "type": "shell",
+      "command": "pwsh",
+      "args": ["-File", "./scripts/clean-node-modules.ps1"],
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "panel": "shared",
+        "group": "cleanup"
+      },
+      "detail": "清理所有 node_modules"
+    },
+    {
+      "label": "🌐 Open: All Development URLs",
+      "type": "shell",
+      "command": "pwsh",
+      "args": ["-File", "./scripts/open-dev-urls.ps1"],
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "panel": "shared",
+        "group": "tools"
+      },
+      "detail": "開啟所有開發相關的 URL"
+    },
+    {
+      "label": "📝 Generate: Component",
+      "type": "shell",
+      "command": "npm",
+      "args": ["run", "generate:component", "${input:componentName}"],
+      "options": {
+        "cwd": "../worktrees/frontend"
+      },
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "panel": "shared",
+        "group": "tools"
+      },
+      "detail": "生成新的 React 組件"
+    },
+    {
+      "label": "📝 Generate: Page",
+      "type": "shell",
+      "command": "npm",
+      "args": ["run", "generate:page", "${input:pageName}"],
+      "options": {
+        "cwd": "../worktrees/frontend"
+      },
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "panel": "shared",
+        "group": "tools"
+      },
+      "detail": "生成新的頁面組件"
+    },
+    {
+      "label": "📝 Generate: API Route",
+      "type": "shell",
+      "command": "npm",
+      "args": ["run", "generate:api", "${input:apiName}"],
+      "options": {
+        "cwd": "../worktrees/backend"
+      },
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "panel": "shared",
+        "group": "tools"
+      },
+      "detail": "生成新的 API 路由"
+    },
+    {
+      "label": "🚀 Dev: Start All Servers",
+      "type": "shell",
+      "command": "pwsh",
+      "args": ["-File", "./scripts/start-dev-servers.ps1", "-All"],
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "panel": "shared",
+        "group": "development"
+      },
+      "isBackground": true,
+      "problemMatcher": [],
+      "detail": "一鍵啟動所有開發伺服器"
+    },
+    {
+      "label": "🖥️ Dev: Start Frontend Only",
+      "type": "shell",
+      "command": "pwsh",
+      "args": ["-File", "./scripts/start-dev-servers.ps1", "-Frontend"],
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "panel": "shared",
+        "group": "development"
+      },
+      "isBackground": true,
+      "problemMatcher": [],
+      "detail": "只啟動前端開發伺服器"
+    },
+    {
+      "label": "⚙️ Dev: Start Backend Only",
+      "type": "shell",
+      "command": "pwsh",
+      "args": ["-File", "./scripts/start-dev-servers.ps1", "-Backend"],
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "panel": "shared",
+        "group": "development"
+      },
+      "isBackground": true,
+      "problemMatcher": [],
+      "detail": "只啟動後端開發伺服器"
+    },
+    {
+      "label": "🌟 Setup: Complete Environment",
+      "type": "shell",
+      "command": "pwsh",
+      "args": ["-File", "./scripts/setup-complete.ps1"],
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": true,
+        "panel": "shared",
+        "group": "setup"
+      },
+      "problemMatcher": [],
+      "detail": "一鍵完整設定並行開發環境"
+    },
+    {
+      "label": "🔄 Sync: Push All Changes",
+      "type": "shell",
+      "command": "pwsh",
+      "args": ["-File", "./scripts/sync-all-worktrees.ps1", "-Push"],
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "panel": "shared",
+        "group": "sync"
+      },
+      "detail": "推送所有 Worktree 的更改"
+    },
+    {
+      "label": "🧹 Clean: All Dependencies",
+      "type": "shell",
+      "command": "pwsh",
+      "args": ["-File", "./scripts/install-all-deps.ps1", "-Clean"],
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "panel": "shared",
+        "group": "install"
+      },
+      "detail": "清理並重新安裝所有依賴"
+    }
+  ],
+  "inputs": [
+    {
+      "id": "moduleName",
+      "description": "選擇要操作的模組",
+      "type": "pickString",
+      "options": [
+        "frontend",
+        "backend",
+        "inventory",
+        "pos",
+        "customer",
+        "analytics",
+        "mobile",
+        "docs",
+        "shared"
+      ]
+    },
+    {
+      "id": "testType",
+      "description": "選擇測試類型",
+      "type": "pickString",
+      "options": [
+        "unit",
+        "integration",
+        "e2e",
+        "all"
+      ]
+    },
+    {
+      "id": "deployEnvironment",
+      "description": "選擇部署環境",
+      "type": "pickString",
+      "options": [
+        "development",
+        "staging",
+        "production"
+      ]
+    },
+    {
+      "id": "componentName",
+      "description": "輸入組件名稱 (PascalCase)",
+      "type": "promptString"
+    },
+    {
+      "id": "pageName",
+      "description": "輸入頁面名稱 (PascalCase)",
+      "type": "promptString"
+    },
+    {
+      "id": "apiName",
+      "description": "輸入 API 名稱 (kebab-case)",
+      "type": "promptString"
+    }
+  ]
+}
