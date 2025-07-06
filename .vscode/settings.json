@@ -1,0 +1,280 @@
+{
+  "mcpServers": {
+    "filesystem": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-filesystem"
+      ],
+      "env": {
+        "ALLOWED_DIRECTORIES": "c:\\Users\\johnson\\Desktop\\side-project\\vendor-management-system\\*"
+      }
+    },
+    "puppeteer": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-puppeteer"
+      ]
+    },
+    "sequential-thinking": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-sequential-thinking"
+      ]
+    }
+  },
+
+  // GitHub Copilot 設定
+  "github.copilot.enable": {
+    "*": true,
+    "plaintext": false,
+    "markdown": true,
+    "scminput": false,
+    "typescript": true,
+    "typescriptreact": true,
+    "javascript": true,
+    "javascriptreact": true
+  },
+  "github.copilot.advanced": {},
+  "github.copilot.chat.localeOverride": "zh-TW",
+  "github.copilot.preferredAccount": "",
+
+  // TypeScript 設定
+  "typescript.suggest.autoImports": true,
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "typescript.preferences.includePackageJsonAutoImports": "auto",
+  "typescript.suggest.includeCompletionsForImportStatements": true,
+  "typescript.suggest.includeCompletionsForModuleExports": true,
+  "typescript.preferences.quoteStyle": "single",
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit",
+    "source.organizeImports": "explicit"
+  },
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true,
+  "editor.detectIndentation": false,
+  "editor.wordWrap": "on",
+  "editor.rulers": [80, 120],
+  "editor.suggestSelection": "first",
+  "editor.quickSuggestionsDelay": 0,
+
+  // 檔案關聯設定
+  "files.associations": {
+    "*.jsx": "javascriptreact",
+    "*.js": "javascript",
+    "*.tsx": "typescriptreact",
+    "*.ts": "typescript",
+    "*.mdx": "markdown",
+    "*.prisma": "prisma"
+  },
+  "files.trimTrailingWhitespace": true,
+  "files.insertFinalNewline": true,
+  "files.eol": "\n",
+  "files.exclude": {
+    "**/node_modules": true,
+    "**/dist": true,
+    "**/build": true,
+    "**/.next": true,
+    "**/coverage": true,
+    "**/.turbo": true
+  },
+
+  // 專案特定設定
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact",
+    "typescript": "typescriptreact"
+  },
+  "emmet.triggerExpansionOnTab": true,
+  "javascript.preferences.quoteStyle": "single",
+
+  // Git 設定
+  "git.autofetch": true,
+  "git.enableSmartCommit": true,
+  "git.confirmSync": false,
+  "git.defaultCloneDirectory": "../worktrees/",
+  "git.openRepositoryInParentFolders": "always",
+
+  // 終端機設定
+  "terminal.integrated.defaultProfile.windows": "PowerShell",
+  "terminal.integrated.cwd": "${workspaceFolder}",
+  "terminal.integrated.fontSize": 14,
+  "terminal.integrated.fontFamily": "FiraCode Nerd Font, Consolas, monospace",
+
+  // 工作區設定
+  "workbench.editor.enablePreview": false,
+  "workbench.editor.enablePreviewFromQuickOpen": false,
+  "workbench.startupEditor": "welcomePage",
+
+  // 檔案總管設定
+  "explorer.compactFolders": false,
+  "explorer.confirmDelete": false,
+  "explorer.confirmDragAndDrop": false,
+  "explorer.fileNesting.enabled": true,
+  "explorer.fileNesting.patterns": {
+    "*.ts": "${capture}.js",
+    "*.tsx": "${capture}.js, ${capture}.css, ${capture}.module.css",
+    "package.json": "package-lock.json, yarn.lock, pnpm-lock.yaml",
+    "tsconfig.json": "tsconfig.*.json"
+  },
+
+  // 格式化設定
+  "prettier.requireConfig": true,
+  "prettier.configPath": ".prettierrc",
+  "prettier.enable": true,
+
+  // ESLint 設定
+  "eslint.enable": true,
+  "eslint.workingDirectories": [
+    "./",
+    "../worktrees/frontend",
+    "../worktrees/backend",
+    "../worktrees/inventory",
+    "../worktrees/pos",
+    "../worktrees/customer",
+    "../worktrees/analytics",
+    "../worktrees/mobile",
+    "../worktrees/docs",
+    "../worktrees/shared"
+  ],
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact"
+  ],
+
+  // Tailwind CSS 設定
+  "tailwindCSS.includeLanguages": {
+    "typescript": "typescript",
+    "typescriptreact": "typescriptreact"
+  },
+  "tailwindCSS.experimental.classRegex": [
+    "tw`([^`]*)",
+    ["clsx\\\\(([^)]*)\\\\)", "'([^']*)'"],
+    ["classnames\\\\(([^)]*)\\\\)", "'([^']*)'"],
+    ["cn\\\\(([^)]*)\\\\)", "'([^']*)'"]
+  ],
+
+  // 語言特定格式化
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.rulers": [80, 120],
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": "explicit",
+      "source.organizeImports": "explicit"
+    }
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.rulers": [80, 120],
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": "explicit",
+      "source.organizeImports": "explicit"
+    }
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[markdown]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.wordWrap": "on"
+  },
+  "[prisma]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+
+  // 搜尋排除設定
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/dist": true,
+    "**/.git": true,
+    "**/build": true,
+    "**/.next": true,
+    "**/coverage": true,
+    "**/.turbo": true,
+    "**/package-lock.json": true,
+    "**/yarn.lock": true,
+    "**/pnpm-lock.yaml": true
+  },
+
+  // 檔案監視排除
+  "files.watcherExclude": {
+    "**/node_modules/**": true,
+    "**/dist/**": true,
+    "**/.git/**": true,
+    "**/build/**": true,
+    "**/.next/**": true,
+    "**/coverage/**": true
+  },
+
+  // 專案特定設定
+  "marketmate.worktrees": {
+    "frontend": "../worktrees/frontend",
+    "backend": "../worktrees/backend",
+    "inventory": "../worktrees/inventory",
+    "pos": "../worktrees/pos",
+    "customer": "../worktrees/customer",
+    "analytics": "../worktrees/analytics",
+    "mobile": "../worktrees/mobile",
+    "docs": "../worktrees/docs",
+    "shared": "../worktrees/shared"
+  },
+
+  // 工作區顏色自訂
+  "workbench.colorCustomizations": {
+    "titleBar.activeBackground": "#2563eb",
+    "titleBar.activeForeground": "#ffffff",
+    "titleBar.inactiveBackground": "#1e40af",
+    "statusBar.background": "#2563eb",
+    "statusBar.foreground": "#ffffff",
+    "panel.border": "#2563eb",
+    "sideBar.border": "#e5e7eb"
+  },
+
+  // 圖示主題設定
+  "material-icon-theme.folders.associations": {
+    "worktrees": "folder-git",
+    "frontend": "folder-react",
+    "backend": "folder-node",
+    "inventory": "folder-database",
+    "pos": "folder-tools",
+    "customer": "folder-users",
+    "analytics": "folder-charts",
+    "mobile": "folder-mobile",
+    "docs": "folder-docs",
+    "shared": "folder-shared"
+  },
+
+  // 包管理器設定
+  "npm.packageManager": "pnpm",
+  "npm.autoDetect": "on",
+
+  // 編輯器增強
+  "editor.bracketPairColorization.enabled": true,
+  "editor.guides.bracketPairs": true,
+  "editor.linkedEditing": true,
+  "editor.cursorSmoothCaretAnimation": "on",
+  "editor.smoothScrolling": true,
+  "editor.fontLigatures": true,
+  "editor.fontFamily": "FiraCode Nerd Font, Consolas, monospace",
+  "editor.fontSize": 14,
+
+  "commands": [
+    {
+      "command": "claude.frontend",
+      "title": "Claude: 前端開發",
+      "category": "MarketMate"
+    },
+    {
+      "command": "claude.backend",
+      "title": "Claude: 後端開發",
+      "category": "MarketMate"
+    }
+  ]
+}
